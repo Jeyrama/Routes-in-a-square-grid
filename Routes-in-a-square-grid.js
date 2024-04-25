@@ -15,3 +15,10 @@ Examples:
 Note: 
   you're traveling on the edges of the squares in the grid, not the squares themselves.
 */
+
+
+// Solution
+
+const partialFactorial = (t, b) => Array(...Array(t - b)).map((_, i) => i + b + 1).reduce((p, c) => p * c, 1);
+const factorial = n => partialFactorial(n, 1);
+const routes = n => n > 0 ? Math.round(partialFactorial(2 * n, n) / factorial(n)) : 0;
